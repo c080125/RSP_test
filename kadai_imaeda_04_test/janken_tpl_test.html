@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <!-- <h1>✊✌️✋</h1> -->
+  <div class="header_img">
+    <img src="../kadai_imaeda_04_test/img/Title/Title.001.png" alt="">
+  </div>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn"><img class="btn_img" src="../kadai_imaeda_04_test/img/rock.png" alt=""></li>
+    <li id="cho_btn"><img class="btn_img" src="../kadai_imaeda_04_test/img/scissor.png" alt=""></li>
+    <li id="par_btn"><img class="btn_img" src="../kadai_imaeda_04_test/img/paper.png" alt=""></li>
+  </ul>
+  <div>コンピュータの出した手は？</div>
+  <div id="pc_hands">なに？</div>
+  <div id="judgement">勝ち</div> 
+  <div id="again">もう一回チャレンジ</div>
+</main>
+
+<footer id="footer">
+  <p>copyrights 2020 ひまえだ All RIghts Reserved (except images).</p>
+  <!-- //この中に書く -->
+</footer>
+<script>
+// 総合の戦績を表示させる
+// いっそのこと文字を無くしてみる？
+// レスポンシブにチャレンジしたいよね
+// 初期設定でポイント付与、一回やるごとに減るけど、勝ったら（買ってもOK）増えるとか設計できるといいね
+
+
+//じゃんけん用のSCRIPTを書いてください
+  $("#gu_btn").on('click', function(){
+    const num = Math.ceil (Math.random() * 3);
+    if (num==1){
+      // 元々のスクリプトをhiddenにしておいて、押したらcomputerのチョイスが画像で出てくるイメージ
+      // できればそれを別画面で動かす
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/rock.png" alt="">'); 
+      $("#judgement").text("Draw!");
+    }
+    if (num==2){ //チョキ
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/scussors.png" alt="">'); 
+      $("#judgement").text("You Lose!");
+    }
+    if (num==3){ //パー
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/paper.png" alt="">'); 
+      $("#judgement").text("You Win!");
+    }
+})
+
+$("#cho_btn").on('click', function(){ //チョキを選んだとき
+    const num = Math.ceil (Math.random() * 3);
+    if (num==1){
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/rock.png" alt="">'); 
+      $("#judgement").text("You Lose!");
+    }
+    if (num==2){
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/scussors.png" alt="">'); 
+      $("#judgement").text("Draw!");
+    }
+    if (num==3){
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/paper.png" alt="">'); 
+      $("#judgement").text("You Win!");
+    }
+})
+
+$("#par_btn").on('click', function(){
+    const num = Math.ceil (Math.random() * 3);
+    if (num==1){
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/rock.png" alt="">'); 
+      $("#judgement").text("You Win!");
+    }
+    if (num==2){
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/scussors.png" alt="">'); 
+      $("#judgement").text("You Lose!");
+    }
+    if (num==3){
+      $("#pc_hands").html('<img class="btn_img" src="../kadai_imaeda_04_test/img/paper.png" alt="">'); 
+      $("#judgement").text("Draw!");
+    }
+})
+
+//もう一回チャレンジするボタンをセットする＝これによって、リロードと同じ効果をもたらす
+//上記の結果発表の後にボタンが表示されるイメージ
+$ ("#again").on()
+
+</script>
+</body>
+</html>
